@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+env3/
+*.venv/
+
+# IDE files
+.idea/
+.vscode/
+
+# Database
+*.sqlite3
+
+# Static files
+/staticfiles/
+
+# Media files
+/media/
+
+# Log files
+*.log
+
+# Configuration files
+*.swp
+
+# Temporary files
+*.bak
+*.tmp
+
+# Ignore migrations, as these are auto-generated
+**/migrations/*.py
+**/migrations/*.pyc
+
+# Ignore local settings file
+**/local_settings.py
+
+# Ignore secret keys
+**/settings/secret_key.py
+
+# Ignore django debug toolbar state
+*.dmp
+
+# Ignore coverage reports
+.coverage*
+
+# Ignore cache files
+*.cache

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        /* CSS for background color */
+        body {
+            background-color:#178473; /* Set the background color here */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            height: 100vh; /* Ensures the background covers the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Optional: Add styles to center the form */
+        .form-container {
+            background-color: #28b0a3;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            
+            <div class="col-md-6 form-container"> <!-- Wrap the form in a container for styling -->
+                <p style="font-size: xx-large;">Let's join our comunity </p>
+                <form method="POST" action="{% url 'login_user' %}">
+                    {% csrf_token %}
+                    <input type="text" name="username" placeholder="Username"  required/><br/><br>
+
+                    <input type="password" name="password" placeholder="Password"  required/><br/><br>
+                    <button class="btn btn-primary " type="submit">login</button>
+                </form>
+                
+                <div class="border-top pt-3 text-center">
+                    <p class="text-muted">Already have an account? <a class="ml-2" href="{% url 'register_user'%}">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

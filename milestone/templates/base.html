@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link src="milestone2.js">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Custom CSS for responsive video */
+        .embed-responsive-custom {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+
+        .embed-responsive-custom iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .items-container {
+            position: relative;
+            top: 80px;
+        }
+
+        .items-container::after {
+            content: "";
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}
+    <!-- containerfluid 1 starts  -->
+    <div class="container-fluid  " style="background-color: #177168;  ">
+        <div class="row container mx-auto">
+            <div class="col-4" style="background-color: #177168;">
+                <div>
+                    <span style="float: left;"><i class="fa fa-envelope-o">&nbsp;</i>rishab@rtesoftwares.com</span>
+                    <span style="float: right;">
+                        <i class="fa fa-mobile-phone"></i>+91 7307221170
+                    </span>
+                </div>
+            </div>
+            <div class="col-4" style="background-color: #177168;"></div>
+            <div class="col-4 d-flex align-items-center" style="background-color: #177168; ">
+                <span style="float:right; margin-right: 16px"><i class="fa fa-twitter"></i></span>
+                <span style="float:right; margin-right: 16px"><i class="fa fa-facebook-square"></i></span>
+                <span style="float:right; margin-right: 16px"><i class="fa fa-instagram"></i></span>
+                <span style="float:right; margin-right: 16px"><i class="fa fa-linkedin-square"></i></span>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div style="background-color: #178473;"> -->
+        <div class="container-fluid sticky-top" style="background-color: #008374;">
+            <div class="container-fluid sticky-top p-3 ">
+                <div class="container d-flex justify-content-between align-items-center ">
+                    <div style="font-size: x-large; color: azure;">Impact</div>
+                    <nav class="navbar navbar-expand-lg sticky-top">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#home" style="color: whitesmoke;">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about" style="color: whitesmoke;">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#services" style="color: whitesmoke;">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contact" style="color: whitesmoke;">Contact</a>
+                                </li>
+                                {% if request.user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout_user'%}"
+                                        style="color: whitesmoke;">Logout</a>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'register_user'%}"
+                                        style="color: whitesmoke;">Register/Login</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+        <!-- <nav class="navbar navbar-expand-sm position-sticky sticky-top" style="background-color: #178473;"> -->
+        <!-- Brand/logo -->
+        <!-- <a class="navbar-brand" href="#" style="margin-left: 250px;"><h2 style="color: whitesmoke;">Impact</h2></a> -->
+
+        <!-- Links -->
+        <!-- <ul class="navbar-nav" style="margin-left: 550px;">
+          <li class="nav-item">
+            <a class="nav-link" href="#home" style="color: whitesmoke;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" style="color: whitesmoke;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services" style="color: whitesmoke;">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" style="color: whitesmoke;">Contact</a>
+          </li>
+        </ul>
+      </nav>
+       -->
+
+        <div style="background-color: #178473;">
+            <div class="container" style="display: flex; align-items: center; flex-direction: column;">
+                <!-- container fluids end here -->
+                <!-- next div start which contain text and image -->
+                <div class="row">
+                    <div class="col-md" style="background-color: #178473;">
+                        <h1 id="home" style="color: white; margin-top: 80px;">Welcome to Impact</h1>
+                        <p>wikipedia is a free online encyclopedia, created and edited by volunteers around the world
+                            and
+                            hosted.</p>
+                        <div style="display: flex; align-items: center;">
+                            <button type="button" class="btn btn-primary"
+                                style="border-radius: 30px; color: whitesmoke; background-color: #177168;">Get
+                                Started</button>&nbsp;&nbsp;
+                            <span style="display: flex; align-items: center;"><i class='fa fa-play-circle'
+                                    style='font-size:36px; color: white;'></i>&nbsp<a href="Watch video"
+                                    style="color: white;">Watch video</a></span>
+
+                        </div>
+                    </div>
+                    <div class="col-md" style="background-color: #178473;">
+                        <img src="{% static 'images/Capture.png' %}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="items-container container">
+                <div class=" row d-flex justify-content-center">
+                    <div class="col-lg-2 col-md-4 m-2" style="height: 200px; width: 220px; background-color: #177168;">
+                        <i class="fa fa-desktop"
+                            style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                        <p style="display: flex;justify-content: center;margin-top: 20px; color: white;">lorem Lipsum
+                        </p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 m-2" style="height: 200px; width: 220px; background-color: #177168;">
+                        <i class="fa fa-dollar"
+                            style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                        <p style="display: flex;justify-content: center; color: white; margin-top: 20px">lorem Lipsum
+                        </p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 m-2" style="height: 200px; width: 220px; background-color: #177168">
+                        <i class="fa fa-ils"
+                            style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                        <p
+                            style="display: flex;justify-content: center; color: white; margin-top: 20px; margin-top: 20px;">
+                            lorem Lipsum</p>
+                    </div>
+                    <div class="col-lg-2 col-md-4 m-2" style="height: 200px; width: 220px;background-color: #177168">
+                        <i class="fa fa-arrows-alt"
+                            style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                        <p style="display: flex;justify-content: center; color: white; margin-top: 20px" ;>lorem Lipsum
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- </div> -->
+    <!-- <div style="display: flex; align-items: center; flex-direction: column; padding: 0 200px; background-color:white;
+    ;">
+        <div class="row" style="column-gap: 30px; position: absolute;bottom: 90px;">
+            <div class="col" style="height: 170px; width: 200px; background-color: #177168;">
+                <i class="fa fa-desktop"
+                    style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                <p style="display: flex;justify-content: center;margin-top: 20px; color: white;">lorem Lipsum</p>
+            </div>
+            <div class="col" style="height: 170px; width: 200px; background-color: #177168;">
+                <i class="fa fa-dollar"
+                    style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                <p style="display: flex;justify-content: center; color: white; margin-top: 20px">lorem Lipsum</p>
+            </div>
+            <div class="col" style="height: 170px; width: 200px; background-color: #177168">
+                <i class="fa fa-ils"
+                    style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                <p style="display: flex;justify-content: center; color: white; margin-top: 20px; margin-top: 20px;">
+                    lorem Lipsum</p>
+            </div>
+            <div class="col" style="height: 170px; width: 200px;background-color: #177168">
+                <i class="fa fa-arrows-alt"
+                    style="font-size:24px;display: flex;justify-content: center; margin-top: 30px; color: white;"></i>
+                <p style="display: flex;justify-content: center; color: white; margin-top: 20px" ;>lorem Lipsum</p>
+            </div>
+        </div>
+
+    </div> -->
+
+    <div class="container"
+        style="display: flex; align-items: center; flex-direction: column; background-color:white; margin-top: 180px;">
+        <div>
+            <h4 id="about"><u style="text-decoration-color: #177168; display: flex;justify-content: center;">About
+                    us</u></h4>
+            <p>In the example above, the text is underlined and the color of the underline is set to blue.
+            </p>
+
+        </div>
+        <!-- new div starts here image + text -->
+        <div>
+            <div class="row">
+                <div class="col-sm">
+                    <h3 style="display: flex; justify-content: left;">From today's featured article</h3>
+                    <img src="{% static 'images/image-2.png' %}" class="img-rounded img-fluid">
+                    <p>The Philippine television newscast 24 Oras has won thirty-two awards from ninety-three
+                        nominations.</p>
+                    <p>The newscast initially featured Mel Tiangco and Mike Enriquez; the newscast's anchors have
+                        changed significantly during its run. It has won five Box Office Entertainment Awards for Most
+                        Popular TV Program News & Public Affairs</p>
+                </div>
+                <div class="col-sm">
+                    <p>In the example above, the text is underlined and the color of the underline is set to blue.</p>
+                    <i class="fa fa-check-circle" style="color:green">&nbsp;</i>In Portugal, the Democratic Alliance<br>
+                    <i class="fa fa-check-circle" style="color:green">&nbsp;</i>At the Academy Awards, Oppenheimer wins
+                    seven awards,<br>
+                    <i class="fa fa-check-circle" style="color:green">&nbsp;</i>Japanese manga artist Akira Toriyama,
+                    author of Dragon Ball, dies at the age of 68
+                    <p>44 BC – Julius Caesar (bust pictured), the dictator of the Roman Republic, was stabbed to death
+                        by a group of senators led by Marcus Junius Brutus.</p>
+                    <p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Guq9Vl8dK30"
+                            width="420" height="340" autoplay="autoplay" loop="loop" playsinline></iframe>
+
+                    </div>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="container" style="width: 50%;">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Responsive video embed -->
+                <div class="embed-responsive embed-responsive-16by9 embed-responsive-custom">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KJwYBJMSbPI?autoplay=1"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- our service div starts -->
+    <div style="display: flex; align-items: center; flex-direction: column; background-color:white; margin-top: 50px
+        ;">
+
+        <div>
+            <h4><u id="services" style="text-decoration-color: #177168; display: flex;justify-content: center;">Our
+                    Services</u></h4>
+            <p>In the example above, the text is underlined and the color of the underline is set to blue.
+            </p>
+
+        </div>
+
+        <!-- new grid div starts -->
+
+        <div class="container d-flex">
+            <div class="row row-cols-4 row-cols-lg-4 justify-content-center">
+                <div class="col-md m-3" style="border: 1px solid black;  text-align: left; min-width: 200px;">
+                    <i class="fa fa-anchor" style="font-size:24px; margin-top: 20px;"></i>
+                    <h5 style="margin-top: 15px;"><u>Today's featured</u></h5>
+                    <p>The central hub for editors, with resources, links, tasks, and announcements.</p>
+                    <a href="Rad more">Read More </a>
+
+
+                </div>
+                <div class="col-md m-3" style="border: 1px solid black; min-width: 200px;">
+                    <i class="fa fa-leaf" style="font-size:24px;margin-top: 20px"></i>
+                    <h5 style="margin-top: 15px;"><u>Leaf Style</u></h5>
+                    <p>The central hub for editors, with resources, links, </p>
+                    <a href="Rad more">Read More </a>
+                </div>
+                <div class="col-md m-3" style="border: 1px solid black; min-width: 200px;">
+                    <i class="fa fa-hourglass" style="font-size:24px;margin-top: 20px"></i>
+                    <h5 style="margin-top: 15px;"><u>Other areas</u></h5>
+                    <p>The central hub for editors, with resources, links, tasks, and announcements.</p>
+                    <a href="Rad more">Read More </a>
+                </div>
+                <div class="col-md m-3" style="border: 1px solid black;  min-width: 200px;">
+                    <i class="fa fa-gears" style="font-size:24px;margin-top: 20px"></i>
+                    <h5 style="margin-top: 15px;"><u>Gears</u></h5>
+                    <p>The central hub for editors, with resources, links, tasks, and announcements.</p>
+                    <a href="Rad more">Read More </a>
+                </div>
+                <div class="col-md m-3" style=" border: 1px solid black;  min-width: 200px;">
+                    <i class="fa fa-exclamation-triangle" style="font-size:24px;margin-top: 20px"></i>
+                    <h5 style="margin-top: 15px;"><u>Triangle</u></h5>
+                    <p>The central hub for editors, with resources, links, tasks, and announcements.</p>
+                    <a href="Rad more">Read More </a>
+                </div>
+                <div class="col-md m-3" style="border: 1px solid black; min-width: 200px;">
+                    <i class="fa fa-diamond" style="font-size:24px;margin-top: 20px"></i>
+                    <h5 style="margin-top: 15px;"><u>Diamond</u></h5>
+                    <p>The central hub for editors, with resources, links, tasks, and announcements.</p>
+                    <a href="Rad more">Read More </a>
+                </div>
+            </div>
+        </div>
+
+        <h4><u style="text-decoration-color: #177168; display: flex;justify-content: center;">Python Team </u></h4>
+        <p>In the example above, the text is underlined and the color of the underline is set to blue.
+        </p>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <img src="{%static 'images/karun sir.png'%}" style="width: 100%;">
+                    <div class="Fname">
+                        <h5 style="text-align: center;">Karun Dhir</h5>
+                        <div class="designation">
+                            <p style="text-align: center;">Product Manager</p>
+                            <div class="icoons " style="display: flex;justify-content: space-around;">
+                                <i class="fa fa-instagram"></i>
+                                <i class="fa fa-google-plus"></i>
+                                <i class="fa fa-twitter"></i>
+                                <i class="fa fa-linkedin-square"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+            <div class="col-3">
+                <div>
+                    <img src="{%static 'images/rimal.png'%}" style="width: 100%;">
+                    <div class="Fname">
+                        <h5 style="text-align: center;">Rimaljeet Kaur</h5>
+                        <div class="designation">
+                            <p style="text-align: center;">Professor</p>
+                            <div class="icoons " style="display: flex;justify-content: space-around;">
+                                <i class="fa fa-instagram"></i>
+                                <i class="fa fa-google-plus"></i>
+                                <i class="fa fa-twitter"></i>
+                                <i class="fa fa-linkedin-square"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <img src="{% static 'images/akhil.png' %}" style="width: 100%;">
+                    <div class="Fname">
+                        <h5 style="text-align: center;">Akhil Pruthi</h5>
+                        <div class="designation">
+                            <p style="text-align: center;">Chapri Developer</p>
+                            <div class="icoons " style="display: flex;justify-content: space-around;">
+                                <i class="fa fa-instagram"></i>
+                                <i class="fa fa-google-plus"></i>
+                                <i class="fa fa-twitter"></i>
+                                <i class="fa fa-linkedin-square"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-3">
+                <div>
+                    <img src="{%static 'images/rishab.png'%}" style="width: 100%;">
+                    <div class="Fname">
+                        <h5 style="text-align: center; margin-top: 22px;">Rishab Sharma</h5>
+                        <div class="designation">
+                            <p style="text-align: center;">QA Eng.</p>
+                            <div class="icoons " style="display: flex;justify-content: space-around;">
+                                <i class="fa fa-instagram"></i>
+                                <i class="fa fa-google-plus"></i>
+                                <i class="fa fa-twitter"></i>
+                                <i class="fa fa-linkedin-square"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container" style="margin-top: 60px;">
+        <h4><u id="contact" style="text-decoration-color: #177168; display: flex;justify-content: center;">Contacts</u>
+        </h4>
+        <p>In the example above, the text is underlined and the color of the underline is set to blue.
+        </p>
+
+        <div class="inner-div">
+            <div class="row">
+                <div class="col" style="background-color: #177168;">
+                    <div class="jumbotron"
+                        style="background-color: #178473; height: 80px; margin: 10px; padding: 10px; color: whitesmoke; border-radius: 10px;">
+                        <i class="fa fa-map-marker" style='font-size:20px; margin-top: 10px;'>&nbsp;&nbsp;Location</i>
+                        <p>B16 House number PACL colony</p>
+                    </div>
+                    <div class="jumbotron"
+                        style="background-color: #178473; height: 80px; margin: 10px; padding: 10px; color: whitesmoke; border-radius: 10px;">
+                        <i class="fa fa-envelope" style='font-size:20px; margin-top: 10px;'>&nbsp;&nbsp;Email</i>
+
+
+                        <p>rishabsharma@gmail.com</p>
+                    </div>
+                    <div class="jumbotron"
+                        style="background-color: #178473; height: 80px; margin: 10px; padding: 10px; color: whitesmoke; border-radius: 10px;">
+                        <i class="fa fa-phone" style='font-size:20px; margin-top: 10px;'>&nbsp;&nbsp;Call</i>
+                        <p>+91 7307221170</p>
+                    </div>
+                    <div class="jumbotron"
+                        style="background-color: #178473; height: 80px; margin: 10px; padding: 10px; color: whitesmoke; border-radius: 10px;">
+                        <i class="fa fa-home" style='font-size:20px; margin-top: 10px;'>&nbsp;&nbsp;Open Hosue</i>
+                        <p>B16 House number PACL colony</p>
+                    </div>
+                </div>
+                <!-- style="display: flex; align-items: center; background-color:green; margin-top: 60px;"> -->
+
+                <div class="col p-3 border">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label for="usr">Your Name</label>
+                                <input type="text" class="form-control" id="usr" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group col">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" rows="5" id="message" placeholder="Message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="sendMessageBtn"
+                            style="background-color: #178473; width: 160px; border-radius: 12px; margin-left: 120px;">Send
+                            Message</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container-fluid" style="background-color: #178473; margin-top: 50px; color: whitesmoke;">
+        <div class="row">
+            <div col-3 style="margin-left: 150px; margin-top: 25px;">
+                <h5>Impact</h5>
+                <p>Village pump – Forum for discussions about Wikipedia itself,<br>including policies and technical
+                    issues.
+                </p>
+                <span style="display: flex; justify-content: space-around;">
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-google-plus"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-linkedin-square"></i>
+                </span>
+            </div>
+            <div col-3>
+                <div style="margin-top: 25px;">
+                    <h5>Useful Links</h5>
+                    <ul>
+                        <li><a href="#home" style="color: whitesmoke;">Home</li></a>
+                        <li><a href="#about" style="color: whitesmoke;">ABout us</li></a>
+                        <li><a href="#services" style="color: whitesmoke;">Service</li></a>
+                        <li><a href="Terms and Conditions" style="color: whitesmoke;">Terms and Conditions</li></a>
+                    </ul>
+                </div>
+            </div>
+            <div col-4>
+                <div style="margin-top: 25px;">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li>Home</li>
+                        <li>About us</li>
+                        <li>Service</li>
+                        <li>Terms and Conditions</li>
+                    </ul>
+                </div>
+            </div>
+            <div col-4>
+                <div style="margin-top: 25px; margin-left: 50px;">
+                    <h5>Contact</h5>
+
+                    <p>12 Street Nangal Dam</p>
+                    <p>District Nangal</p>
+                    <p>Phone:+91 7307221170</p>
+                    <p>Email: rishabsharma@gmail.com</p>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

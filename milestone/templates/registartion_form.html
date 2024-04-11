@@ -1,0 +1,87 @@
+<!-- Centered container -->
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Content section -->
+                <div class="content-section">
+                    <!-- Sign up form -->
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4 text-center">Join us today</legend>
+                            <!-- First Name -->
+                            <div class="form-group row">
+                                <label for="first_name" class="col-sm-3 col-form-label">First Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" value="{{ form.first_name.value }}" Required>
+                                    {% if form.first_name.errors %}
+                                    <p class="text-danger">{{ form.first_name.errors }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <!-- Last Name -->
+                            <div class="form-group row">
+                                <label for="last_name" class="col-sm-3 col-form-label">Last Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" value="{{ form.last_name.value }}" Required>
+                                    {% if form.last_name.errors %}
+                                    <p class="text-danger">{{ form.last_name.errors }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <!-- Username -->
+                            <div class="form-group row">
+                                <label for="username" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" value="{{ form.username.value }}" Required>
+                                    {% if form.username.errors %}
+                                    <p class="text-danger">{{ form.username.errors }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="form-group row">
+                                <label for="email" class="col-sm-3 col-form-label">Email address</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" value="{{ form.email.value }}" Required>
+                                    {% if form.email.errors %}
+                                    <p class="text-danger">{{ form.email.errors }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="form-group row">
+                                <label for="password1" class="col-sm-3 col-form-label">Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter your password" Required>
+                                    {% if form.password1.errors %}
+                                    <p class="text-danger">{{ form.password1.errors }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <!-- Confirm Password -->
+                            <div class="form-group row">
+                                <label for="password2" class="col-sm-3 col-form-label">Confirm Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm your password" Required>
+                                    {% if form.password2.errors %}
+                                    <p class="text-danger">{{ form.password2.errors }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!-- Submit Button -->
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary" type="submit">Sign up</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Sign in form -->
+                    <div class="border-top pt-3 text-center">
+                        <p class="text-muted">Already have an account? <a class="ml-2" href="{% url 'login_user'%}">Sign in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
